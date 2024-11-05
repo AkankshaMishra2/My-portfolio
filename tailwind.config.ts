@@ -13,8 +13,10 @@ module.exports = {
   			'fade-in': 'fade-in 0.5s ease-in-out forwards',
   			'slide-up': 'slide-up 0.5s ease-out forwards',
   			'slide-down': 'slide-down 0.5s ease-out forwards',
+			  'spin-slow': 'spin 60s linear infinite',
   			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear'
   		},
+		
   		keyframes: {
   			'fade-in': {
   				'0%': {
@@ -29,6 +31,7 @@ module.exports = {
             'offset-distance': '100%',
           },
         },
+		
         animation: {
           'border-beam': 'border-beam var(--duration) infinite linear',
         },
@@ -52,11 +55,8 @@ module.exports = {
   					opacity: '1'
   				}
   			},
-  			'border-beam': {
-  				'100%': {
-  					'offset-distance': '100%'
-  				}
-  			}
+			
+  			
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

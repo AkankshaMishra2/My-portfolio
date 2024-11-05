@@ -4,6 +4,10 @@ import { useEffect, useState } from 'react'
 import Hero from './components/home/hero'
 import { GridPattern } from './components/ui/grid-pattern'
 import { cn } from '@/lib/utils'
+import Skills from './components/about/Skills'
+import AchievementGrid from './components/about/Timeline'
+import AchievementsTimeline from './components/about/Achievementtimeline';
+
 
 export default function Home() {
   const [showContent, setShowContent] = useState(false)
@@ -25,7 +29,7 @@ export default function Home() {
           x={-1}
           y={-1}
           strokeDasharray="4 4"
-          className="absolute inset-x-0 inset-y-[-30%] h-[200%] w-full skew-y-12"
+          className="absolute inset-0 h-full w-full skew-y-12 fill-gray-300/50 stroke-gray-300/50"
           squares={[
             [0, 0],
             [1, 3],
@@ -44,9 +48,17 @@ export default function Home() {
           showContent ? 'opacity-100' : 'opacity-0'
         )}
       >
-        <Hero />
-        {/* Other content */}
+        <div className="relative z-10">
+          <Hero />
+        </div>
+        <div className="bg-black min-h-screen">
+        
+          <Skills />
+          <AchievementGrid />
+          <AchievementsTimeline />
+        </div>
       </div>
+      
     </div>
   )
 }
