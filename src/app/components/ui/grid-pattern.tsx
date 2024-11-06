@@ -1,5 +1,4 @@
 import { useId } from "react";
-
 import { cn } from '@/lib/utils';
 
 interface GridPatternProps {
@@ -31,6 +30,7 @@ export function GridPattern({
       className={cn(
         "pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30",
         className,
+        "z-[-10]" // Decrease z-index
       )}
       {...props}
     >
@@ -69,4 +69,4 @@ export function GridPattern({
   );
 }
 
-export {GridPattern as default};
+export { GridPattern as default };

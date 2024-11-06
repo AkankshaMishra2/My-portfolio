@@ -7,7 +7,6 @@ import '../app/globals.css'
 import { useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 import { GridPattern } from './components/ui/grid-pattern'
-
 const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
@@ -36,7 +35,7 @@ export default function RootLayout({
             x={-1}
             y={-1}
             strokeDasharray="4 4"
-            className="absolute inset-x-0 inset-y-[-30%] h-[200%] w-full skew-y-12 fill-gray-400/10 stroke-gray-400/10"
+            className="absolute inset-x-0 inset-y-[-30%] h-[200%] w-full skew-y-12 fill-gray-700/50 stroke-gray-700/50"
             squares={[
               [0, 0],
               [1, 3],

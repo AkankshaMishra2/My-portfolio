@@ -8,7 +8,7 @@ const AchievementsTimeline: React.FC = () => {
       title: 'Launched First Product',
       description: 'Introduced our flagship product to the market.',
       icon: <FaTrophy size={24} />,
-      image: 'https://picsum.photos/seed/1/400/300',
+      image: './images/pic1.jpg',
     },
     {
       title: 'Awarded Industry Grant',

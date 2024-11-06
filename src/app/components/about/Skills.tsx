@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaPython, FaJava, FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
 import { SiCplusplus, SiLinux, SiMongodb, SiNextdotjs, SiExpress, SiTailwindcss, SiGit, SiGithub } from 'react-icons/si';
+import { AnimatedPinDemo } from '../AnimatedPinDemo';
 
 const skills = [
   { name: 'C', icon: <SiCplusplus className="w-12 h-12 text-blue-500" /> },
@@ -22,16 +23,45 @@ const skills = [
 ];
 
 const courses = [
-  { title: 'Operating Systems', description: 'DOne OS' },
-  { title: 'Python Programming', description: 'Python' },
-  { title: 'Computer Networks', description: 'CN' },
-  { title: 'Object-Oriented Programming', description: 'OOPs' },
-  { title: 'C/C++ Programming', description: 'C/C++' },
-  { title: 'Embedded Systems & IoT', description: 'ES&IOT' },
-  { title: 'Database Management Systems', description: 'DBMS' },
+  {
+    title: 'Operating Systems',
+    description:
+      'Gain a deep understanding of operating system concepts, including process management, memory management, and file systems.',
+    href: '/courses/operating-systems',
+  },
+  {
+    title: 'Python Programming',
+    description:
+      'Learn the fundamentals of Python programming, including data structures, control flow, and object-oriented programming.',
+    href: '/courses/python-programming',
+  },
+  {
+    title: 'Computer Networks',
+    description:
+      'Explore the principles of computer networking, including protocols, topologies, and network security.',
+    href: '/courses/computer-networks',
+  },
+  {
+    title: 'Object-Oriented Programming',
+    description:
+      'Dive into the world of object-oriented programming, learning concepts like encapsulation, inheritance, and polymorphism.',
+    href: '/courses/object-oriented-programming',
+  },
+  {
+    title: 'C/C++ Programming',
+    description:
+      'Master the C and C++ programming languages, developing skills in low-level programming and system design.',
+    href: '/courses/c-cpp-programming',
+  },
+  {
+    title: 'Embedded Systems & IoT',
+    description:
+      'Discover the world of embedded systems and the Internet of Things, learning to design and develop IoT applications.',
+    href: '/courses/embedded-systems-iot',
+  },
 ];
 
-const Skills = () => {
+const SkillsSection = () => {
   return (
     <div className="bg-black text-white py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,18 +96,14 @@ const Skills = () => {
         </div>
 
         <h2 className="text-3xl font-bold text-white mb-8">Courses Done</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {courses.map((course, index) => (
-            <motion.div
+            <AnimatedPinDemo
               key={index}
-              className="bg-gray-800 rounded-lg shadow-lg p-6"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
-              <p className="text-gray-400">{course.description}</p>
-            </motion.div>
+              title={course.title}
+              description={course.description}
+              href={course.href}
+            />
           ))}
         </div>
       </div>
@@ -85,4 +111,4 @@ const Skills = () => {
   );
 };
 
-export {Skills as default};
+export default SkillsSection;
