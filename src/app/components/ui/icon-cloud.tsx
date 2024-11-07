@@ -10,7 +10,12 @@ import {
   SimpleIcon,
 } from "react-icon-cloud";
 
-export const cloudProps: Omit<ICloud, "children"> = {
+// Extend ICloud to include children prop
+interface CloudProps extends ICloud {
+  children: React.ReactFragment;
+}
+
+export const cloudProps = {
   containerProps: {
     style: {
       display: "flex",
@@ -33,9 +38,8 @@ export const cloudProps: Omit<ICloud, "children"> = {
     outlineColour: "#0000",
     maxSpeed: 0.04,
     minSpeed: 0.02,
-    // dragControl: false,
   },
-};
+} as const;
 
 export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
   const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
@@ -52,7 +56,7 @@ export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
       href: undefined,
       target: undefined,
       rel: undefined,
-      onClick: (e: any) => e.preventDefault(),
+      onClick: (e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault(),
     },
   });
 };
@@ -79,10 +83,15 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
     );
   }, [data, theme]);
 
+  const iconElements = renderedIcons?.map((icon, index) => (
+    <span key={index}>{icon}</span>
+  )) || null;
+
   return (
-    // @ts-ignore
-    <Cloud {...cloudProps}>
-      <>{renderedIcons}</>
-    </Cloud>
-  );
-}
+    <Cloud
+      {...(cloudProps as any)}
+      children={renderedIcons?.map((icon, index) => (
+        <span key={index}>{icon}</span>
+      )) || null}
+    />
+  );}

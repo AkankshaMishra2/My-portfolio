@@ -58,7 +58,7 @@ export default function BlurFade({
           duration,
           ease: "easeOut",
         }}
-        className={className}
+        className={`__className_1deade ${className}`}
       >
         {children}
       </motion.div>

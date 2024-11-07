@@ -63,7 +63,7 @@ const courses = [
 
 const SkillsSection = () => {
   return (
-    <div className="bg-black text-white py-20">
+    <div className="__className_1deade bg-black text-white py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-white mb-8">TechStack</h2>
         <div className="relative overflow-hidden mb-16">

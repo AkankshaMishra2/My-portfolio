@@ -1,5 +1,6 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import Hero from './components/home/hero'
 import { GridPattern } from './components/ui/grid-pattern'
@@ -8,10 +9,10 @@ import Skills from './components/about/Skills'
 import AchievementGrid from './components/about/Timeline'
 import InsightsSection from './components/insights'
 import { AboutMe } from './components/about-me'
+import AwesomeContact from './components/layout/Footer'
 
-import AwesomeContact from './components/layout/Footer'  
-import ThankYouSection from './components/Thankyou'
-
+// Dynamically import ThankYouSection without SSR
+const ThankYouSection = dynamic(() => import('./components/Thankyou'), { ssr: false })
 
 export default function Home() {
   const [showContent, setShowContent] = useState(false)
@@ -95,12 +96,12 @@ export default function Home() {
           <div className="relative z-20">
             <div className="bg-black/80 backdrop-blur-sm">
               <Skills />
-              </div>
-              <AchievementGrid />
-              
-              <ThankYouSection />
-              <AwesomeContact />
+            </div>
+            <AchievementGrid />
             
+            {/* Dynamically loaded ThankYouSection */}
+            <ThankYouSection />
+            <AwesomeContact />
           </div>
         </div>
       </main>

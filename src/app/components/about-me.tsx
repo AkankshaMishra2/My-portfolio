@@ -43,7 +43,7 @@ export function AboutMe() {
       initial="hidden"
       animate={controls}
       variants={containerVariants}
-      className="w-full max-w-6xl mx-auto px-4 py-12 bg-black rounded-lg shadow-2xl border border-gray-800"
+      className="w-full max-w-6xl mx-auto px-4 py-12 bg-black text-foreground rounded-lg shadow-2xl border border-gray-800 __className_1deade"
     >
       <div className="flex flex-col md:flex-row items-center gap-8">
         <motion.div className="flex-1 space-y-6" variants={itemVariants}>

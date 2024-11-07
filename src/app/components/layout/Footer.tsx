@@ -3,12 +3,11 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { 
   Github, 
   Mail, 
-  Phone,
   Send,
   Copy,
   Check,
   ExternalLink,
-  X, // Using X icon instead of Twitter
+  X,
   Linkedin
 } from 'lucide-react';
 
@@ -23,7 +22,7 @@ const AwesomeContact = () => {
 
   const socialLinks = [
     {
-      icon: <Github className="w-8 h-8" />, // Increased icon size
+      icon: <Github className="w-8 h-8" />,
       label: "GitHub",
       href: "https://github.com/AkankshaMishra2",
       color: "hover:text-purple-500",
@@ -31,7 +30,7 @@ const AwesomeContact = () => {
       bgHover: "group-hover:bg-purple-500/10"
     },
     {
-      icon: <X className="w-8 h-8" />, // Updated to X icon and increased size
+      icon: <X className="w-8 h-8" />,
       label: "X",
       href: "https://x.com/udk_Akanksha",
       color: "hover:text-blue-400",
@@ -39,7 +38,7 @@ const AwesomeContact = () => {
       bgHover: "group-hover:bg-blue-500/10"
     },
     {
-      icon: <Linkedin className="w-8 h-8" />, // Increased icon size
+      icon: <Linkedin className="w-8 h-8" />,
       label: "LinkedIn",
       href: "https://linkedin.com/in/akanksha--mishra",
       color: "hover:text-blue-600",
@@ -111,9 +110,10 @@ const AwesomeContact = () => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: toast.show ? 1 : 0, y: toast.show ? 0 : 50 }}
-      className="fixed bottom-4 right-4 bg-gray-900 text-white px-6 py-3 rounded-lg shadow-xl z-50"
+      className="fixed bottom-4 right-4 bg-gray-900 text-white px-6 py-3 rounded-lg shadow-xl z-50 flex items-center space-x-2"
     >
-      {toast.message}
+      <Check className="w-5 h-5 text-green-500" />
+      <span>{toast.message}</span>
     </motion.div>
   );
 
@@ -202,63 +202,41 @@ const AwesomeContact = () => {
                     <Mail className="w-6 h-6 text-cyan-500" />
                     <span className="text-gray-300">your.email@example.com</span>
                   </div>
-                  {copied === 'email' ? 
-                    <Check className="w-4 h-4 text-green-500" /> : 
-                    <Copy className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  }
+                  {copied === 'email' ? (
+                    <Check className="text-green-500" />
+                  ) : (
+                    <Copy className="text-gray-400 group-hover:text-cyan-500" />
+                  )}
                 </motion.div>
-
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  onClick={() => handleCopy('+1 234 567 8900', 'phone')}
-                  className="p-4 rounded-lg bg-purple-500/5 border border-purple-500/20 flex items-center justify-between cursor-pointer group"
-                >
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-6 h-6 text-purple-500" />
-                    <span className="text-gray-300">+1 234 567 8900</span>
-                  </div>
-                  {copied === 'phone' ? 
-                    <Check className="w-4 h-4 text-green-500" /> : 
-                    <Copy className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  }
-                </motion.div>
-              </div>
-
-              {/* Social Links - Enhanced styling */}
-              <div className="grid grid-cols-3 gap-4">
-                {socialLinks.map((link) => (
-                  <motion.a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex flex-col items-center p-4 rounded-xl bg-gray-900/50 hover:bg-gray-800/50 transition-all relative overflow-hidden"
-                    whileHover={{ y: -5, scale: 1.02 }}
-                  >
-                    <motion.div 
-                      className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity ${link.bgHover}`} 
-                    />
-                    <span className={`transition-colors duration-300 ${link.color} relative z-10`}>
-                      {link.icon}
-                    </span>
-                    <span className="text-sm text-gray-400 mt-2 group-hover:text-white transition-colors relative z-10">
-                      {link.handle}
-                    </span>
-                    <ExternalLink className="w-3 h-3 absolute top-2 right-2 opacity-0 group-hover:opacity-50" />
-                  </motion.a>
-                ))}
               </div>
             </div>
           </TiltCard>
         </div>
 
-        {/* Floating gradient background */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 animate-pulse" />
-        </div>
+        {/* Social Links */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="flex flex-wrap items-center justify-center gap-6"
+        >
+          {socialLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`p-4 rounded-lg bg-gray-900/50 border border-gray-800 flex items-center gap-2 ${link.color} ${link.bgHover} transition-colors`}
+            >
+              {link.icon}
+              <span className="text-gray-400">{link.label}</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          ))}
+        </motion.div>
       </motion.div>
 
-      <Toast />
+      {/* Toast Notification */}
+      {toast.show && <Toast />}
     </div>
   );
 };

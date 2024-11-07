@@ -16,7 +16,7 @@ const ThankYouSection = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black">
+    <div className="w-full bg-black text-foreground">
       <motion.div 
         className="relative py-24 overflow-hidden"
         initial={{ backgroundColor: "rgba(0, 0, 0, 1)" }}
@@ -106,7 +106,7 @@ const ThankYouSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.7 }}
             >
-              Every great collaboration starts with a simple hello. I&apos;m excited to explore the possibilities together and turn your vision into reality.
+              Every great collaboration starts with a simple hello. I'm excited to explore the possibilities together and turn your vision into reality.
             </motion.p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
@@ -152,7 +152,7 @@ const ThankYouSection = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                Let&apos;s make something amazing together! 🚀
+                Let's make something amazing together! 🚀
               </motion.div>
             </motion.div>
           </motion.div>

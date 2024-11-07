@@ -17,6 +17,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@react-three/fiber": "^8.17.10",
     "@tabler/icons-react": "^3.21.0",
+    "@tsparticles/react": "^3.0.0",
     "@types/three": "^0.169.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

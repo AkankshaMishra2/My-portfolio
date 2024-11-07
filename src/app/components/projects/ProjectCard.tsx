@@ -19,7 +19,7 @@ const ProjectCard = ({
   liveUrl,
 }: ProjectCardProps) => {
   return (
-    <div className="group relative bg-white/5 rounded-lg overflow-hidden hover:bg-white/10 transition-colors">
+    <div className="group relative bg-white/5 rounded-lg overflow-hidden hover:bg-white/10 transition-colors __className_1deade">
       {/* Project Image */}
       <div className="relative h-64 overflow-hidden">
         <Image

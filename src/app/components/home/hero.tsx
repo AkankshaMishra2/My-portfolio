@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import IconCloud from '@/app/components/ui/icon-cloud';
-import { useEffect, useState } from 'react';
+
 
 const slugs = [
   "typescript", "javascript", "dart", "java", "react", "flutter", "android", "html5", "css3",
@@ -20,7 +21,7 @@ export default function Hero() {
     return null;
   }
   return (
-    <section className="relative  z-10 min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative z-10 min-h-screen flex items-center justify-center overflow-hidden __className_1deade">
       {/* Background Pattern */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
