@@ -16,7 +16,9 @@ export default function Hero() {
   useEffect(() => {
     setMounted(true);
   }, []);
-
+  if (!mounted) {
+    return null;
+  }
   return (
     <section className="relative  z-10 min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Pattern */}
@@ -58,8 +60,10 @@ export default function Hero() {
 
         {/* CTA Button */}
         <Link
-          href="/projects"
-          className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg transition-colors animate-fade-in delay-300"
+           href="https://github.com/AkankshaMishra2"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg transition-colors animate-fade-in delay-300"
         >
           <span>View My Work</span>
           <ArrowRight className="w-4 h-4" />

@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Heart, Star, Clock, Code, Coffee, Laptop, Brain } from 'lucide-react';
+import { Sparkles, Heart, Star, Code, Coffee, Brain } from 'lucide-react';
 
 const ThankYouSection = () => {
-  const floatingElements = Array(6).fill(null);
+  const [floatingElements, setFloatingElements] = useState<{ x: number; y: number }[]>([]);
+
+  useEffect(() => {
+    // Generate random positions after component mounts on client side
+    setFloatingElements(
+      Array(6).fill(null).map(() => ({
+        x: Math.random() * 100,
+        y: Math.random() * 100
+      }))
+    );
+  }, []);
 
   return (
     <div className="w-full bg-black">
@@ -13,7 +23,6 @@ const ThankYouSection = () => {
         animate={{ 
           background: [
             "rgba(0, 0, 0, 1)",
-            // "linear-gradient(to bottom, rgba(88, 28, 135, 0.2), rgba(0, 0, 0, 1))"
           ]
         }}
         transition={{
@@ -22,13 +31,13 @@ const ThankYouSection = () => {
           delay: 0.5
         }}
       >
-        {floatingElements.map((_, index) => (
+        {floatingElements.map((pos, index) => (
           <motion.div
             key={index}
             className="absolute"
             initial={{ 
-              x: Math.random() * 100 + "%",
-              y: Math.random() * 100 + "%",
+              x: `${pos.x}%`,
+              y: `${pos.y}%`,
               scale: 0,
               opacity: 0 
             }}
@@ -38,10 +47,10 @@ const ThankYouSection = () => {
               opacity: [0, 0.3, 0]
             }}
             transition={{
-              duration: Math.random() * 10 + 10,
+              duration: 10 + Math.floor(index * 2),
               repeat: Infinity,
               ease: 'linear',
-              delay: Math.random() * 5
+              delay: index * 0.8
             }}
           >
             {index % 3 === 0 ? (
