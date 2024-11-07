@@ -37,29 +37,21 @@ export function GridPattern({
   const id = useId();
   const containerRef = useRef<SVGSVGElement | null>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [squares, setSquares] = useState<Square[]>(() => {
-    const getInitialPos = (): [number, number] => [
+  const [squares, setSquares] = useState<Square[]>(() => generateSquares(numSquares));
+
+  function getPos(): [number, number] {
+    return [
       Math.floor((Math.random() * dimensions.width) / width),
       Math.floor((Math.random() * dimensions.height) / height),
     ];
-    
-    return Array.from({ length: numSquares }, (_, i) => ({
-      id: i,
-      pos: getInitialPos(),
-    }));
-  });
+  }
 
-  const getPos = (): [number, number] => [
-    Math.floor((Math.random() * dimensions.width) / width),
-    Math.floor((Math.random() * dimensions.height) / height),
-  ];
-
-  const generateSquares = (count: number): Square[] => {
+  function generateSquares(count: number): Square[] {
     return Array.from({ length: count }, (_, i) => ({
       id: i,
       pos: getPos(),
     }));
-  };
+  }
 
   const updateSquarePosition = (id: number) => {
     setSquares((currentSquares) =>
@@ -75,8 +67,11 @@ export function GridPattern({
   };
 
   useEffect(() => {
-    setSquares(generateSquares(numSquares));
-  }, [numSquares, dimensions.width, dimensions.height]);
+    const generateAndSetSquares = () => {
+      setSquares(generateSquares(numSquares));
+    };
+    generateAndSetSquares();
+  }, [numSquares, getPos]);
 
   useEffect(() => {
     const currentRef = containerRef.current;

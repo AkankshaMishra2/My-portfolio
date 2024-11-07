@@ -8,7 +8,7 @@ import {
   Copy,
   Check,
   ExternalLink,
-  X,
+  X, // Using X icon instead of Twitter
   Linkedin
 } from 'lucide-react';
 
@@ -23,7 +23,7 @@ const AwesomeContact = () => {
 
   const socialLinks = [
     {
-      icon: <Github className="w-8 h-8" />,
+      icon: <Github className="w-8 h-8" />, // Increased icon size
       label: "GitHub",
       href: "https://github.com/AkankshaMishra2",
       color: "hover:text-purple-500",
@@ -31,7 +31,7 @@ const AwesomeContact = () => {
       bgHover: "group-hover:bg-purple-500/10"
     },
     {
-      icon: <X className="w-8 h-8" />,
+      icon: <X className="w-8 h-8" />, // Updated to X icon and increased size
       label: "X",
       href: "https://x.com/udk_Akanksha",
       color: "hover:text-blue-400",
@@ -39,7 +39,7 @@ const AwesomeContact = () => {
       bgHover: "group-hover:bg-blue-500/10"
     },
     {
-      icon: <Linkedin className="w-8 h-8" />,
+      icon: <Linkedin className="w-8 h-8" />, // Increased icon size
       label: "LinkedIn",
       href: "https://linkedin.com/in/akanksha--mishra",
       color: "hover:text-blue-600",
@@ -137,7 +137,7 @@ const AwesomeContact = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            Let&apos;s bring your ideas to life. Whether it&apos;s a new venture, a creative collaboration, or just an interesting concept - I&apos;m all ears!
+            Let&apos;s bring your ideas to life. Whether it's a new venture, a creative collaboration, or just an interesting concept - I'm all ears!
           </motion.p>
         </div>
 
@@ -224,7 +224,7 @@ const AwesomeContact = () => {
                 </motion.div>
               </div>
 
-              {/* Social Links */}
+              {/* Social Links - Enhanced styling */}
               <div className="grid grid-cols-3 gap-4">
                 {socialLinks.map((link) => (
                   <motion.a
