@@ -1,6 +1,5 @@
 'use client'
 
-import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import Hero from './components/home/hero'
 import { GridPattern } from './components/ui/grid-pattern'
@@ -9,7 +8,8 @@ import Skills from './components/about/Skills'
 import AchievementGrid from './components/about/Timeline'
 import InsightsSection from './components/insights'
 import { AboutMe } from './components/about-me'
-import AwesomeContact from './components/layout/Footer'
+import dynamic from 'next/dynamic'
+const AwesomeContact = dynamic(() => import('./components/layout/Footer'), { ssr: false });
 
 // Dynamically import ThankYouSection without SSR
 const ThankYouSection = dynamic(() => import('./components/Thankyou'), { ssr: false })
