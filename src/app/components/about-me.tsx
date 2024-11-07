@@ -49,10 +49,10 @@ export function AboutMe() {
         <motion.div className="flex-1 space-y-6" variants={itemVariants}>
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-gray-300 text-lg">
-            Hi, I'm Akanksha! Currently a Computer Science Engineering student with a passion for web development and problem-solving. I enjoy building clean, efficient code and continuously expanding my knowledge in full-stack development.
+            Hi, I&apos;m Akanksha! Currently a Computer Science Engineering student with a passion for web development and problem-solving. I enjoy building clean, efficient code and continuously expanding my knowledge in full-stack development.
           </p>
           <p className="text-gray-300 text-lg">
-            My primary skills include web development, C/C++, Python, and version control with Git & GitHub. Always eager to dive into new technologies, I'm on a journey to become a well-rounded developer, ready to tackle real-world challenges.
+            My primary skills include web development, C/C++, Python, and version control with Git & GitHub. Always eager to dive into new technologies, I&apos;m on a journey to become a well-rounded developer, ready to tackle real-world challenges.
           </p>
           <motion.div className="mt-6" variants={itemVariants}>
             <h3 className="text-2xl font-semibold text-white mb-3">Key Skills</h3>

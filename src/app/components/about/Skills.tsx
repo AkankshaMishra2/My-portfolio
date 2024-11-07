@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaPython, FaJava, FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
-import { SiCplusplus, SiLinux, SiMongodb, SiNextdotjs, SiExpress, SiTailwindcss, SiGit, SiGithub } from 'react-icons/si';
+import { FaPython, FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
+import { SiCplusplus,  SiMongodb, SiNextdotjs, SiExpress, SiTailwindcss, SiGit, SiGithub } from 'react-icons/si';
 import { AnimatedPinDemo } from '../AnimatedPinDemo';
 
 const skills = [

@@ -1,6 +1,6 @@
 import React from 'react';
 import BlurFade from "./../ui/blur-fade";
-
+import Image from 'next/image'
 const achievements = [
   {
     image: './images/grphackindia.jpg',
@@ -56,7 +56,7 @@ const AchievementGrid: React.FC = () => {
       {achievements.map((achievement, idx) => (
         <BlurFade key={achievement.image} delay={0.25 + idx * 0.05} inView>
         <div className="mb-4 rounded-lg overflow-hidden">
-          <img
+          <Image
           className="size-full object-cover"
           src={achievement.image}
           alt={`Achievement ${idx + 1}`}

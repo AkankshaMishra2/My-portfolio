@@ -137,7 +137,7 @@ const AwesomeContact = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            Let's bring your ideas to life. Whether it's a new venture, a creative collaboration, or just an interesting concept - I'm all ears!
+            Let&apos;s bring your ideas to life. Whether it's a new venture, a creative collaboration, or just an interesting concept - I'm all ears!
           </motion.p>
         </div>
 
@@ -180,7 +180,7 @@ const AwesomeContact = () => {
                   className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                 >
                   <Send className="w-4 h-4" />
-                  Let's Create Together
+                  Let&apos;s Create Together
                 </motion.button>
               </form>
             </div>
